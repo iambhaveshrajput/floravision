@@ -45,57 +45,76 @@ const plants = [
   },
 ];
 
+const PlantCard = ({ name, description, price, image }) => {
+  return (
+    <article
+      className="flex flex-col rounded-3xl overflow-hidden group hover:border-white/20 transition-all duration-300"
+      style={{
+        background: 'rgba(22,38,20,0.85)',
+        border: '1px solid rgba(255,255,255,0.07)',
+      }}
+    >
+      {/* Image area — dark bg, plant centered, no white */}
+      <div
+        className="w-full flex items-end justify-center pt-6"
+        style={{
+          background: 'rgba(22,38,20,0.85)',
+          minHeight: '220px',
+        }}
+      >
+        <img
+          src={image}
+          alt={name}
+          className="w-full max-h-52 object-contain group-hover:scale-105 transition-transform duration-500 drop-shadow-xl"
+          style={{ maxWidth: '85%' }}
+        />
+      </div>
+
+      {/* Text area */}
+      <div className="flex flex-col px-5 pt-4 pb-5 flex-1">
+        <h3 className="text-white font-semibold text-lg mb-1.5">{name}</h3>
+        <p className="text-gray-400 text-xs leading-relaxed mb-4 flex-1">{description}</p>
+        <div className="flex items-center justify-between mt-auto">
+          <span className="text-white font-semibold text-base">{price}</span>
+          <button
+            aria-label={`Add ${name} to cart`}
+            className="w-9 h-9 flex items-center justify-center rounded-xl text-gray-400 hover:text-white transition-all"
+            style={{ border: '1px solid rgba(255,255,255,0.20)' }}
+          >
+            <ShoppingBag size={15} />
+          </button>
+        </div>
+      </div>
+    </article>
+  );
+};
+
 const TopSellingPlants = () => {
   return (
-    <section id="top-selling" className="py-16 bg-bg-primary">
+    <section id="top-selling" className="py-16" style={{ background: '#141f12' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Heading with yellow bracket lines on both sides */}
-        <div className="flex justify-center mb-20">
+        {/* Heading — | Our Top Selling Plants | with yellow vertical bars */}
+        <div className="flex justify-center mb-12">
           <div className="flex items-center gap-3">
-            <span className="w-0.5 h-8 bg-yellow-500 rounded-full" />
-            <h2 className="text-white font-bold text-2xl sm:text-3xl">
+            <span
+              className="rounded-full"
+              style={{ width: '3px', height: '32px', background: '#c8a84b' }}
+            />
+            <h2 className="text-white font-bold text-2xl sm:text-3xl tracking-wide">
               Our Top Selling Plants
             </h2>
-            <span className="w-0.5 h-8 bg-yellow-500 rounded-full" />
+            <span
+              className="rounded-full"
+              style={{ width: '3px', height: '32px', background: '#c8a84b' }}
+            />
           </div>
         </div>
 
-        {/* 3-column grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-20">
+        {/* Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {plants.map((plant) => (
-            <article
-              key={plant.id}
-              className="relative bg-bg-card border border-white/10 rounded-3xl pt-16 pb-5 px-5 flex flex-col hover:border-white/20 transition-all duration-300 group"
-            >
-              {/* Image overflowing top of card */}
-              <div className="absolute -top-14 left-0 right-0 flex justify-center">
-                <img
-                  src={plant.image}
-                  alt={plant.name}
-                  className="w-40 h-40 object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-
-              <h3 className="text-white font-semibold text-lg mb-1.5 mt-2">
-                {plant.name}
-              </h3>
-              <p className="text-gray-400 text-xs leading-relaxed mb-4 flex-1">
-                {plant.description}
-              </p>
-
-              <div className="flex items-center justify-between mt-auto pt-3 border-t border-white/5">
-                <span className="text-white font-semibold text-base">
-                  {plant.price}
-                </span>
-                <button
-                  aria-label={`Add ${plant.name} to cart`}
-                  className="w-9 h-9 border border-white/25 rounded-xl flex items-center justify-center text-white/60 hover:border-white/60 hover:text-white transition-all duration-200"
-                >
-                  <ShoppingBag size={15} />
-                </button>
-              </div>
-            </article>
+            <PlantCard key={plant.id} {...plant} />
           ))}
         </div>
 
