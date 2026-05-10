@@ -5,7 +5,7 @@ const HeroBanner = () => {
   return (
     <section id="home" className="relative w-full overflow-hidden">
 
-      {/* ── Continuous background image ── */}
+      {/* Background image */}
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1509587584298-0f3b3a3a1797?w=1600&q=90"
@@ -13,31 +13,36 @@ const HeroBanner = () => {
           aria-hidden="true"
           className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0" style={{ background: 'rgba(10,22,10,0.55)' }} />
+        <div className="absolute inset-0" style={{ background: 'rgba(10,22,10,0.58)' }} />
       </div>
 
       <div className="relative z-10 w-full px-5 sm:px-8 lg:px-14">
 
-        {/* ════════════ HERO PART ════════════ */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 pt-24 pb-16 gap-6 items-start">
+        {/* ── HERO ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 pt-24 pb-10 gap-10 items-start">
 
-          {/* ---- LEFT ---- */}
+          {/* LEFT */}
           <div className="flex flex-col gap-5 max-w-lg">
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight">
               Earth's Exhale
             </h1>
-            <p className="text-gray-300 text-sm leading-relaxed max-w-xs sm:max-w-sm">
+            <p className="text-gray-300 text-sm leading-relaxed max-w-sm">
               "Earth Exhale" symbolizes the purity and vitality of the Earth's natural
               environment and its essential role in sustaining life.
             </p>
 
-            {/* Buttons */}
             <div className="flex items-center gap-5 mt-1">
-              <button className="border border-white text-white text-sm font-medium px-6 py-2.5 rounded-md hover:bg-white/10 transition-all duration-200">
+              <button
+                className="text-white text-sm font-medium px-6 py-2.5 rounded-md hover:bg-white/10 transition-all"
+                style={{ border: '1px solid rgba(255,255,255,0.9)' }}
+              >
                 Buy Now
               </button>
               <button className="flex items-center gap-2.5 text-gray-300 hover:text-white text-sm transition-colors">
-                <span className="w-9 h-9 border border-gray-300 rounded-full flex items-center justify-center flex-shrink-0">
+                <span
+                  className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0"
+                  style={{ border: '1px solid rgba(255,255,255,0.6)' }}
+                >
                   <Play size={12} className="ml-0.5 fill-gray-300 text-gray-300" />
                 </span>
                 Live Demo...
@@ -46,9 +51,9 @@ const HeroBanner = () => {
 
             {/* Review card */}
             <div
-              className="mt-10 rounded-2xl p-4 w-fit"
+              className="mt-8 rounded-2xl p-4 w-fit"
               style={{
-                background: 'rgba(0,0,0,0.40)',
+                background: 'rgba(0,0,0,0.42)',
                 backdropFilter: 'blur(14px)',
                 border: '1px solid rgba(255,255,255,0.10)',
               }}
@@ -69,36 +74,35 @@ const HeroBanner = () => {
                   </div>
                 </div>
               </div>
-              <p className="text-gray-400 text-xs leading-relaxed max-w-[220px]">
+              <p className="text-gray-400 text-xs leading-relaxed" style={{ maxWidth: '220px' }}>
                 I can't express how thrilled I am with my new natural plants! They bring such a
                 fresh and vibrant energy to my home.
               </p>
             </div>
           </div>
 
-          {/* ---- RIGHT — Featured plant card ---- */}
-          <div className="hidden lg:flex justify-end items-start pt-6">
+          {/* RIGHT — Featured plant card — visible on ALL screens */}
+          <div className="flex justify-center lg:justify-end items-start" style={{ paddingTop: '72px' }}>
             <div
-              className="relative rounded-3xl px-5 pb-5 pt-0 w-[300px]"
+              className="relative rounded-3xl px-5 pb-5 pt-0 w-full max-w-[300px]"
               style={{
-                background: 'rgba(20,35,18,0.45)',
+                background: 'rgba(20,35,18,0.50)',
                 backdropFilter: 'blur(20px)',
                 border: '1px solid rgba(255,255,255,0.15)',
               }}
             >
-              {/* Plant image overflows top of card */}
-              <div className="flex justify-center -mt-16 mb-4">
+              {/* Plant image overflows top */}
+              <div className="flex justify-center mb-4" style={{ marginTop: '-72px' }}>
                 <img
                   src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?w=500&q=90"
                   alt="Aglaonema plant"
-                  className="w-64 h-64 object-contain drop-shadow-2xl"
+                  className="object-contain drop-shadow-2xl"
+                  style={{ width: '240px', height: '240px' }}
                 />
               </div>
 
-              {/* Indoor Plant label */}
               <p className="text-gray-400 text-sm mb-1 px-1">Indoor Plant</p>
 
-              {/* Name + chevron */}
               <div className="flex items-center justify-between px-1 mb-4">
                 <h3 className="text-white font-semibold text-2xl tracking-wide">
                   Aglaonema&nbsp; plant
@@ -106,7 +110,6 @@ const HeroBanner = () => {
                 <ChevronRight size={22} className="text-white flex-shrink-0" />
               </div>
 
-              {/* Buy Now button */}
               <button
                 className="w-full text-white text-base py-3 rounded-2xl hover:bg-white/10 transition-all font-medium"
                 style={{ border: '1px solid rgba(255,255,255,0.35)' }}
@@ -114,47 +117,49 @@ const HeroBanner = () => {
                 Buy Now
               </button>
 
-              {/* Dots */}
               <div className="flex items-center justify-center gap-2 mt-4">
                 <span className="w-7 h-1.5 bg-white rounded-full" />
-                <span className="w-2 h-2 bg-white/30 rounded-full" />
-                <span className="w-2 h-2 bg-white/30 rounded-full" />
+                <span className="w-2 h-2 rounded-full" style={{ background: 'rgba(255,255,255,0.30)' }} />
+                <span className="w-2 h-2 rounded-full" style={{ background: 'rgba(255,255,255,0.30)' }} />
               </div>
             </div>
           </div>
 
         </div>
 
-        {/* ════════════ "Our Trendy plants" label ════════════ */}
-        <div className="flex justify-center py-6">
+        {/* ── "Our Trendy plants" ── */}
+        <div className="flex justify-center py-8">
           <h2 className="text-white font-semibold text-2xl border-r-4 border-yellow-500 pr-3 leading-tight">
             Our Trendy plants
           </h2>
         </div>
 
-        {/* ════════════ TRENDING CARDS ════════════ */}
-        <div className="flex flex-col gap-6 pb-16 mt-4">
+        {/* ── TRENDING CARDS ── */}
+        <div className="flex flex-col gap-8 pb-16">
 
-          {/* Card 1 — image left, text right */}
+          {/* Card 1 — image left overflows, text right */}
           <div
-            className="relative rounded-3xl flex flex-col sm:flex-row items-center overflow-visible"
+            className="rounded-3xl flex flex-col sm:flex-row items-center"
             style={{
-              background: 'rgba(12,24,12,0.70)',
+              background: 'rgba(12,24,12,0.72)',
               backdropFilter: 'blur(10px)',
               border: '1px solid rgba(255,255,255,0.08)',
+              overflow: 'visible',
               minHeight: '220px',
             }}
           >
-            {/* Image overflows left + top */}
-            <div className="flex-shrink-0 flex items-center justify-center sm:justify-start w-full sm:w-auto py-6 sm:py-0 sm:-ml-4 sm:-my-8">
+            <div
+              className="flex-shrink-0 flex items-center justify-center w-full sm:w-auto py-6 sm:py-0"
+              style={{ marginLeft: '-16px', marginTop: '-32px', marginBottom: '-32px' }}
+            >
               <img
                 src="https://images.unsplash.com/photo-1593691509543-c55fb32d8de5?w=500&q=85"
-                alt="Desk plant"
-                className="w-60 h-72 sm:w-72 sm:h-80 object-cover rounded-3xl drop-shadow-2xl"
+                alt="Desk decoration plant"
+                className="rounded-3xl drop-shadow-2xl object-cover"
+                style={{ width: '260px', height: '300px' }}
               />
             </div>
-            {/* Text */}
-            <div className="flex-1 flex flex-col justify-center px-6 sm:px-10 py-6 sm:py-10">
+            <div className="flex-1 flex flex-col justify-center px-8 py-8">
               <h3 className="text-white font-bold text-xl mb-2">For Your Desks Decorations</h3>
               <p className="text-gray-300 text-sm italic leading-relaxed mb-4">
                 I recently added a beautiful desk decoration plant to my workspace, and it
@@ -179,18 +184,18 @@ const HeroBanner = () => {
             </div>
           </div>
 
-          {/* Card 2 — text left, image right */}
+          {/* Card 2 — text left, image right overflows */}
           <div
-            className="relative rounded-3xl flex flex-col sm:flex-row items-center overflow-visible"
+            className="rounded-3xl flex flex-col sm:flex-row items-center"
             style={{
-              background: 'rgba(12,24,12,0.70)',
+              background: 'rgba(12,24,12,0.72)',
               backdropFilter: 'blur(10px)',
               border: '1px solid rgba(255,255,255,0.08)',
+              overflow: 'visible',
               minHeight: '220px',
             }}
           >
-            {/* Text */}
-            <div className="flex-1 flex flex-col justify-center px-6 sm:px-10 py-6 sm:py-10 order-2 sm:order-1">
+            <div className="flex-1 flex flex-col justify-center px-8 py-8 order-2 sm:order-1">
               <h3 className="text-white font-bold text-xl mb-2">For Your Desks Decorations</h3>
               <p className="text-gray-300 text-sm italic leading-relaxed mb-4">
                 The greenery adds a touch of nature and serenity to my desk, making it feel
@@ -213,12 +218,15 @@ const HeroBanner = () => {
                 </button>
               </div>
             </div>
-            {/* Image overflows right */}
-            <div className="flex-shrink-0 flex items-center justify-center sm:justify-end w-full sm:w-auto order-1 sm:order-2 py-6 sm:py-0 sm:-mr-4 sm:-my-8">
+            <div
+              className="flex-shrink-0 flex items-center justify-center w-full sm:w-auto order-1 sm:order-2 py-6 sm:py-0"
+              style={{ marginRight: '-16px', marginTop: '-32px', marginBottom: '-32px' }}
+            >
               <img
                 src="https://images.unsplash.com/photo-1459156212016-c812468e2115?w=500&q=85"
-                alt="Desk plant"
-                className="w-60 h-72 sm:w-72 sm:h-80 object-cover rounded-3xl drop-shadow-2xl"
+                alt="Desk decoration plant"
+                className="rounded-3xl drop-shadow-2xl object-cover"
+                style={{ width: '260px', height: '300px' }}
               />
             </div>
           </div>
