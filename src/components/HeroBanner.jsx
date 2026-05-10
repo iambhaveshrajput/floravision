@@ -19,115 +19,120 @@ const HeroBanner = () => {
       <div className="relative z-10 w-full px-5 sm:px-8 lg:px-14">
 
         {/* ── HERO ── */}
-        <div className="relative pt-24 pb-10 min-h-[90vh]">
+        <div className="pt-24 pb-10">
+          <div className="flex items-start justify-between gap-4">
 
-          {/* Featured plant card — absolute top right always */}
-          <div
-            className="absolute top-20 right-0 z-20"
-            style={{ width: '180px' }}
-          >
-            <div
-              className="relative rounded-3xl px-3 pb-4 pt-0 w-full"
-              style={{
-                background: 'rgba(20,35,18,0.50)',
-                backdropFilter: 'blur(20px)',
-                border: '1px solid rgba(255,255,255,0.15)',
-              }}
-            >
-              {/* Plant image overflows top */}
-              <div className="flex justify-center mb-2" style={{ marginTop: '-48px' }}>
-                <img
-                  src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?w=500&q=90"
-                  alt="Aglaonema plant"
-                  className="object-contain drop-shadow-2xl"
-                  style={{ width: '150px', height: '150px' }}
-                />
-              </div>
+            {/* LEFT — text content */}
+            <div className="flex flex-col gap-5 max-w-xs sm:max-w-sm lg:max-w-lg flex-1">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight">
+                Earth's Exhale
+              </h1>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                "Earth Exhale" symbolizes the purity and vitality of the Earth's natural
+                environment and its essential role in sustaining life.
+              </p>
 
-              <p className="text-gray-400 text-xs mb-0.5 px-1">Indoor Plant</p>
-
-              <div className="flex items-center justify-between px-1 mb-2">
-                <h3 className="text-white font-semibold text-sm leading-tight">
-                  Aglaonema&nbsp; plant
-                </h3>
-                <ChevronRight size={14} className="text-white flex-shrink-0" />
-              </div>
-
-              <button
-                className="w-full text-white text-xs py-2 rounded-xl hover:bg-white/10 transition-all font-medium"
-                style={{ border: '1px solid rgba(255,255,255,0.35)' }}
-              >
-                Buy Now
-              </button>
-
-              <div className="flex items-center justify-center gap-1.5 mt-3">
-                <span className="w-5 h-1 bg-white rounded-full" />
-                <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'rgba(255,255,255,0.30)' }} />
-                <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'rgba(255,255,255,0.30)' }} />
-              </div>
-            </div>
-          </div>
-
-          {/* LEFT — text content */}
-          <div className="flex flex-col gap-5 max-w-xs sm:max-w-sm lg:max-w-lg">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight">
-              Earth's Exhale
-            </h1>
-            <p className="text-gray-300 text-sm leading-relaxed">
-              "Earth Exhale" symbolizes the purity and vitality of the Earth's natural
-              environment and its essential role in sustaining life.
-            </p>
-
-            <div className="flex items-center gap-5 mt-1">
-              <button
-                className="text-white text-sm font-medium px-6 py-2.5 rounded-md hover:bg-white/10 transition-all"
-                style={{ border: '1px solid rgba(255,255,255,0.9)' }}
-              >
-                Buy Now
-              </button>
-              <button className="flex items-center gap-2.5 text-gray-300 hover:text-white text-sm transition-colors">
-                <span
-                  className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0"
-                  style={{ border: '1px solid rgba(255,255,255,0.6)' }}
+              <div className="flex items-center gap-5 mt-1">
+                <button
+                  className="text-white text-sm font-medium px-6 py-2.5 rounded-md hover:bg-white/10 transition-all"
+                  style={{ border: '1px solid rgba(255,255,255,0.9)' }}
                 >
-                  <Play size={12} className="ml-0.5 fill-gray-300 text-gray-300" />
-                </span>
-                Live Demo...
-              </button>
-            </div>
+                  Buy Now
+                </button>
+                <button className="flex items-center gap-2.5 text-gray-300 hover:text-white text-sm transition-colors">
+                  <span
+                    className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0"
+                    style={{ border: '1px solid rgba(255,255,255,0.6)' }}
+                  >
+                    <Play size={12} className="ml-0.5 fill-gray-300 text-gray-300" />
+                  </span>
+                  Live Demo...
+                </button>
+              </div>
 
-            {/* Review card */}
-            <div
-              className="mt-8 rounded-2xl p-4 w-fit"
-              style={{
-                background: 'rgba(0,0,0,0.42)',
-                backdropFilter: 'blur(14px)',
-                border: '1px solid rgba(255,255,255,0.10)',
-              }}
-            >
-              <div className="flex items-center gap-3 mb-2">
-                <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80"
-                  alt="Ronnie Hamill"
-                  className="w-10 h-10 rounded-full object-cover"
-                />
-                <div>
-                  <p className="text-white text-sm font-semibold">Ronnie Hamill</p>
-                  <div className="flex gap-0.5 mt-0.5">
-                    {[1, 2, 3, 4].map((i) => (
-                      <Star key={i} size={11} className="text-yellow-400 fill-yellow-400" />
-                    ))}
-                    <Star size={11} className="text-yellow-400 fill-yellow-400 opacity-40" />
+              {/* Review card */}
+              <div
+                className="mt-8 rounded-2xl p-4 w-fit"
+                style={{
+                  background: 'rgba(0,0,0,0.42)',
+                  backdropFilter: 'blur(14px)',
+                  border: '1px solid rgba(255,255,255,0.10)',
+                }}
+              >
+                <div className="flex items-center gap-3 mb-2">
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80"
+                    alt="Ronnie Hamill"
+                    className="w-10 h-10 rounded-full object-cover"
+                  />
+                  <div>
+                    <p className="text-white text-sm font-semibold">Ronnie Hamill</p>
+                    <div className="flex gap-0.5 mt-0.5">
+                      {[1, 2, 3, 4].map((i) => (
+                        <Star key={i} size={11} className="text-yellow-400 fill-yellow-400" />
+                      ))}
+                      <Star size={11} className="text-yellow-400 fill-yellow-400 opacity-40" />
+                    </div>
                   </div>
                 </div>
+                <p className="text-gray-400 text-xs leading-relaxed" style={{ maxWidth: '200px' }}>
+                  I can't express how thrilled I am with my new natural plants! They bring such a
+                  fresh and vibrant energy to my home.
+                </p>
               </div>
-              <p className="text-gray-400 text-xs leading-relaxed" style={{ maxWidth: '200px' }}>
-                I can't express how thrilled I am with my new natural plants! They bring such a
-                fresh and vibrant energy to my home.
-              </p>
             </div>
-          </div>
 
+            {/* RIGHT — Featured plant card */}
+            <div className="flex-shrink-0" style={{ width: '180px', marginTop: '48px' }}>
+              <div
+                className="relative rounded-3xl px-3 pb-4 pt-0 w-full"
+                style={{
+                  background: 'rgba(20,35,18,0.50)',
+                  backdropFilter: 'blur(20px)',
+                  border: '1px solid rgba(255,255,255,0.15)',
+                }}
+              >
+                {/* Plant image overflows top */}
+                <div className="flex justify-center mb-2" style={{ marginTop: '-48px' }}>
+                  <img
+                    src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?w=500&q=90"
+                    alt="Aglaonema plant"
+                    className="object-contain drop-shadow-2xl"
+                    style={{ width: '150px', height: '150px' }}
+                  />
+                </div>
+
+                <p className="text-gray-400 text-xs mb-0.5 px-1">Indoor Plant</p>
+
+                <div className="flex items-center justify-between px-1 mb-2">
+                  <h3 className="text-white font-semibold text-sm leading-tight">
+                    Aglaonema&nbsp; plant
+                  </h3>
+                  <ChevronRight size={14} className="text-white flex-shrink-0" />
+                </div>
+
+                <button
+                  className="w-full text-white text-xs py-2 rounded-xl hover:bg-white/10 transition-all font-medium"
+                  style={{ border: '1px solid rgba(255,255,255,0.35)' }}
+                >
+                  Buy Now
+                </button>
+
+                <div className="flex items-center justify-center gap-1.5 mt-3">
+                  <span className="w-5 h-1 bg-white rounded-full" />
+                  <span
+                    className="w-1.5 h-1.5 rounded-full"
+                    style={{ background: 'rgba(255,255,255,0.30)' }}
+                  />
+                  <span
+                    className="w-1.5 h-1.5 rounded-full"
+                    style={{ background: 'rgba(255,255,255,0.30)' }}
+                  />
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
 
         {/* ── "Our Trendy plants" ── */}
