@@ -5,7 +5,7 @@ const HeroBanner = () => {
   return (
     <section id="home" className="relative w-full overflow-hidden">
 
-      {/* ── Continuous background image for entire section ── */}
+      {/* ── Continuous background image ── */}
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1509587584298-0f3b3a3a1797?w=1600&q=90"
@@ -21,7 +21,7 @@ const HeroBanner = () => {
         {/* ════════════ HERO PART ════════════ */}
         <div className="grid grid-cols-1 lg:grid-cols-2 pt-24 pb-16 gap-6 items-start">
 
-          {/* LEFT — text */}
+          {/* ---- LEFT ---- */}
           <div className="flex flex-col gap-5 max-w-lg">
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight">
               Earth's Exhale
@@ -62,7 +62,7 @@ const HeroBanner = () => {
                 <div>
                   <p className="text-white text-sm font-semibold">Ronnie Hamill</p>
                   <div className="flex gap-0.5 mt-0.5">
-                    {[1,2,3,4].map(i => (
+                    {[1, 2, 3, 4].map((i) => (
                       <Star key={i} size={11} className="text-yellow-400 fill-yellow-400" />
                     ))}
                     <Star size={11} className="text-yellow-400 fill-yellow-400 opacity-40" />
@@ -76,43 +76,53 @@ const HeroBanner = () => {
             </div>
           </div>
 
-          {/* RIGHT — Featured plant card */}
-          <div className="hidden lg:flex justify-end items-start">
+          {/* ---- RIGHT — Featured plant card ---- */}
+          <div className="hidden lg:flex justify-end items-start pt-6">
             <div
-              className="relative rounded-3xl p-5 w-[280px] mt-4"
+              className="relative rounded-3xl px-5 pb-5 pt-0 w-[300px]"
               style={{
-                background: 'rgba(15,30,15,0.55)',
-                backdropFilter: 'blur(16px)',
-                border: '1px solid rgba(255,255,255,0.12)',
+                background: 'rgba(20,35,18,0.45)',
+                backdropFilter: 'blur(20px)',
+                border: '1px solid rgba(255,255,255,0.15)',
               }}
             >
-              {/* Plant image overflows top */}
-              <div className="flex justify-center -mt-20 mb-3">
+              {/* Plant image overflows top of card */}
+              <div className="flex justify-center -mt-16 mb-4">
                 <img
-                  src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?w=400&q=85"
+                  src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?w=500&q=90"
                   alt="Aglaonema plant"
-                  className="w-56 h-56 object-cover rounded-2xl drop-shadow-2xl"
+                  className="w-64 h-64 object-contain drop-shadow-2xl"
                 />
               </div>
-              <p className="text-gray-400 text-xs mb-1 px-1">Indoor Plant</p>
-              <div className="flex items-center justify-between px-1 mb-3">
-                <h3 className="text-white font-semibold text-lg tracking-wide">Aglaonema&nbsp; plant</h3>
-                <ChevronRight size={18} className="text-gray-400 flex-shrink-0" />
+
+              {/* Indoor Plant label */}
+              <p className="text-gray-400 text-sm mb-1 px-1">Indoor Plant</p>
+
+              {/* Name + chevron */}
+              <div className="flex items-center justify-between px-1 mb-4">
+                <h3 className="text-white font-semibold text-2xl tracking-wide">
+                  Aglaonema&nbsp; plant
+                </h3>
+                <ChevronRight size={22} className="text-white flex-shrink-0" />
               </div>
+
+              {/* Buy Now button */}
               <button
-                className="w-full text-white text-sm py-2 rounded-xl hover:bg-white/10 transition-all"
-                style={{ border: '1px solid rgba(255,255,255,0.30)' }}
+                className="w-full text-white text-base py-3 rounded-2xl hover:bg-white/10 transition-all font-medium"
+                style={{ border: '1px solid rgba(255,255,255,0.35)' }}
               >
                 Buy Now
               </button>
+
               {/* Dots */}
               <div className="flex items-center justify-center gap-2 mt-4">
-                <span className="w-6 h-1.5 bg-white rounded-full" />
-                <span className="w-2 h-2 bg-white/25 rounded-full" />
-                <span className="w-2 h-2 bg-white/25 rounded-full" />
+                <span className="w-7 h-1.5 bg-white rounded-full" />
+                <span className="w-2 h-2 bg-white/30 rounded-full" />
+                <span className="w-2 h-2 bg-white/30 rounded-full" />
               </div>
             </div>
           </div>
+
         </div>
 
         {/* ════════════ "Our Trendy plants" label ════════════ */}
@@ -203,7 +213,7 @@ const HeroBanner = () => {
                 </button>
               </div>
             </div>
-            {/* Image overflows right + top */}
+            {/* Image overflows right */}
             <div className="flex-shrink-0 flex items-center justify-center sm:justify-end w-full sm:w-auto order-1 sm:order-2 py-6 sm:py-0 sm:-mr-4 sm:-my-8">
               <img
                 src="https://images.unsplash.com/photo-1459156212016-c812468e2115?w=500&q=85"
