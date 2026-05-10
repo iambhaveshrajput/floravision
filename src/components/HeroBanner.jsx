@@ -19,14 +19,61 @@ const HeroBanner = () => {
       <div className="relative z-10 w-full px-5 sm:px-8 lg:px-14">
 
         {/* ── HERO ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 pt-24 pb-10 gap-10 items-start">
+        <div className="relative pt-24 pb-10 min-h-[90vh]">
 
-          {/* LEFT */}
-          <div className="flex flex-col gap-5 max-w-lg">
+          {/* Featured plant card — absolute top right always */}
+          <div
+            className="absolute top-20 right-0 z-20"
+            style={{ width: '180px' }}
+          >
+            <div
+              className="relative rounded-3xl px-3 pb-4 pt-0 w-full"
+              style={{
+                background: 'rgba(20,35,18,0.50)',
+                backdropFilter: 'blur(20px)',
+                border: '1px solid rgba(255,255,255,0.15)',
+              }}
+            >
+              {/* Plant image overflows top */}
+              <div className="flex justify-center mb-2" style={{ marginTop: '-48px' }}>
+                <img
+                  src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?w=500&q=90"
+                  alt="Aglaonema plant"
+                  className="object-contain drop-shadow-2xl"
+                  style={{ width: '150px', height: '150px' }}
+                />
+              </div>
+
+              <p className="text-gray-400 text-xs mb-0.5 px-1">Indoor Plant</p>
+
+              <div className="flex items-center justify-between px-1 mb-2">
+                <h3 className="text-white font-semibold text-sm leading-tight">
+                  Aglaonema&nbsp; plant
+                </h3>
+                <ChevronRight size={14} className="text-white flex-shrink-0" />
+              </div>
+
+              <button
+                className="w-full text-white text-xs py-2 rounded-xl hover:bg-white/10 transition-all font-medium"
+                style={{ border: '1px solid rgba(255,255,255,0.35)' }}
+              >
+                Buy Now
+              </button>
+
+              <div className="flex items-center justify-center gap-1.5 mt-3">
+                <span className="w-5 h-1 bg-white rounded-full" />
+                <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'rgba(255,255,255,0.30)' }} />
+                <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'rgba(255,255,255,0.30)' }} />
+              </div>
+            </div>
+          </div>
+
+          {/* LEFT — text content */}
+          <div className="flex flex-col gap-5 max-w-xs sm:max-w-sm lg:max-w-lg">
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight">
               Earth's Exhale
             </h1>
-            <p className="text-gray-300 text-sm leading-relaxed max-w-sm">
+            <p className="text-gray-300 text-sm leading-relaxed">
               "Earth Exhale" symbolizes the purity and vitality of the Earth's natural
               environment and its essential role in sustaining life.
             </p>
@@ -74,54 +121,10 @@ const HeroBanner = () => {
                   </div>
                 </div>
               </div>
-              <p className="text-gray-400 text-xs leading-relaxed" style={{ maxWidth: '220px' }}>
+              <p className="text-gray-400 text-xs leading-relaxed" style={{ maxWidth: '200px' }}>
                 I can't express how thrilled I am with my new natural plants! They bring such a
                 fresh and vibrant energy to my home.
               </p>
-            </div>
-          </div>
-
-          {/* RIGHT — Featured plant card — visible on ALL screens */}
-          <div className="flex justify-center lg:justify-end items-start" style={{ paddingTop: '72px' }}>
-            <div
-              className="relative rounded-3xl px-5 pb-5 pt-0 w-full max-w-[300px]"
-              style={{
-                background: 'rgba(20,35,18,0.50)',
-                backdropFilter: 'blur(20px)',
-                border: '1px solid rgba(255,255,255,0.15)',
-              }}
-            >
-              {/* Plant image overflows top */}
-              <div className="flex justify-center mb-4" style={{ marginTop: '-72px' }}>
-                <img
-                  src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?w=500&q=90"
-                  alt="Aglaonema plant"
-                  className="object-contain drop-shadow-2xl"
-                  style={{ width: '240px', height: '240px' }}
-                />
-              </div>
-
-              <p className="text-gray-400 text-sm mb-1 px-1">Indoor Plant</p>
-
-              <div className="flex items-center justify-between px-1 mb-4">
-                <h3 className="text-white font-semibold text-2xl tracking-wide">
-                  Aglaonema&nbsp; plant
-                </h3>
-                <ChevronRight size={22} className="text-white flex-shrink-0" />
-              </div>
-
-              <button
-                className="w-full text-white text-base py-3 rounded-2xl hover:bg-white/10 transition-all font-medium"
-                style={{ border: '1px solid rgba(255,255,255,0.35)' }}
-              >
-                Buy Now
-              </button>
-
-              <div className="flex items-center justify-center gap-2 mt-4">
-                <span className="w-7 h-1.5 bg-white rounded-full" />
-                <span className="w-2 h-2 rounded-full" style={{ background: 'rgba(255,255,255,0.30)' }} />
-                <span className="w-2 h-2 rounded-full" style={{ background: 'rgba(255,255,255,0.30)' }} />
-              </div>
             </div>
           </div>
 
@@ -137,7 +140,7 @@ const HeroBanner = () => {
         {/* ── TRENDING CARDS ── */}
         <div className="flex flex-col gap-8 pb-16">
 
-          {/* Card 1 — image left overflows, text right */}
+          {/* Card 1 — image left, text right */}
           <div
             className="rounded-3xl flex flex-col sm:flex-row items-center"
             style={{
@@ -184,7 +187,7 @@ const HeroBanner = () => {
             </div>
           </div>
 
-          {/* Card 2 — text left, image right overflows */}
+          {/* Card 2 — text left, image right */}
           <div
             className="rounded-3xl flex flex-col sm:flex-row items-center"
             style={{
